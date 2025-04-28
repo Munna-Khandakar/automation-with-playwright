@@ -16,8 +16,8 @@ export default defineConfig({
     use: {
         baseURL: 'https://ideas.ideascale.me',
         httpCredentials: {
-            username: 'user',
-            password: 'pass',
+            username: 'superuser@ideascale.me',
+            password: 'brewski01',
         },
         trace: 'on-first-retry',
     },
@@ -31,7 +31,7 @@ export default defineConfig({
             testMatch: /.*\.setup\.ts/,
         },
         {
-            name: 'chromium',
+            name: 'large device',
             use: {
                 ...devices['Desktop Chrome'],
                 storageState: '.auth/user.json',
