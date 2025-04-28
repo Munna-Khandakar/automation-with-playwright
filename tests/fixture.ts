@@ -1,6 +1,6 @@
 import {Page, test as base} from '@playwright/test';
-import {DashboardPage} from "../pages/DashboardPage";
-import {ReportsPage} from "../pages/ReportsPage";
+import {DashboardPage} from "@page/DashboardPage";
+import {ReportsPage} from "@page/ReportsPage";
 
 type TestFixtures = {
     dashboardPage: DashboardPage;
