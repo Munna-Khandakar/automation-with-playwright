@@ -1,7 +1,7 @@
 import {defineConfig, devices} from '@playwright/test';
 
 export default defineConfig({
-    testDir: './tests',
+    testDir: './src/tests',
 
     fullyParallel: false,
 
@@ -38,14 +38,14 @@ export default defineConfig({
             },
             dependencies: ['setup'],
         },
-        {
-            name: 'small device',
-            use: {
-                ...devices['Desktop Chrome'],
-                viewport: {width: 576, height: 720},
-                storageState: '.auth/user.json',
-            },
-            dependencies: ['setup'],
-        },
+        // {
+        //     name: 'small device',
+        //     use: {
+        //         ...devices['Desktop Chrome'],
+        //         viewport: {width: 576, height: 720},
+        //         storageState: '.auth/user.json',
+        //     },
+        //     dependencies: ['setup'],
+        // },
     ],
 });

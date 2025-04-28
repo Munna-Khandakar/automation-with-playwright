@@ -1,5 +1,6 @@
 import {Page} from '@playwright/test';
 import {BasePage} from "./basePage";
+import config from '../../playwright.config';
 
 export class LoginPage extends BasePage {
 
@@ -12,16 +13,15 @@ export class LoginPage extends BasePage {
     }
 
     async fillEmail(): Promise<void> {
-        await this.waitForPageLoad()
         const emailField = this.page.getByRole('textbox', {name: 'Email'});
         await emailField.click();
-        await emailField.fill('superuser@ideascale.me');
+        await emailField.fill(config.use.httpCredentials.username);
     }
 
     async fillPassword(): Promise<void> {
         const passwordField = this.page.getByRole('textbox', {name: 'Password'});
         await passwordField.click();
-        await passwordField.fill('brewski01');
+        await passwordField.fill(config.use.httpCredentials.password);
     }
 
     async login(): Promise<void> {

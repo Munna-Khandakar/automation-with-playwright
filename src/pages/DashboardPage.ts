@@ -30,7 +30,7 @@ export class DashboardPage extends BasePage {
 
     async clickCreateDashboardButton(): Promise<void> {
         await this.createDashboardButton.click();
-        await this.waitForSpinner();
+        
     }
 
     async submitCreateDashboardForm(name: string = '', description: string = ''): Promise<void> {
@@ -41,7 +41,7 @@ export class DashboardPage extends BasePage {
         await this.descriptionField.fill(description);
 
         await this.submitButton.click();
-        await this.waitForSpinner();
+        
     }
 
     async assertDashboardCreated(): Promise<void> {
@@ -51,7 +51,7 @@ export class DashboardPage extends BasePage {
 
     async clickAddReportsButton(): Promise<void> {
         await this.addReportsButton.click();
-        await this.waitForSpinner();
+        
     }
 
     async addReportToDashboard(): Promise<void> {

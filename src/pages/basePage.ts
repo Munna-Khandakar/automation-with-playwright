@@ -1,11 +1,11 @@
-import {Page, Locator} from '@playwright/test';
+import {Page} from '@playwright/test';
 
 export abstract class BasePage {
     readonly page: Page;
     protected static readonly SPINNER_SELECTOR = 'svg.spinner circle.path';
     protected static readonly PACE_LOADER_SELECTOR = '.pace-running';
 
-    constructor(page: Page) {
+    protected constructor(page: Page) {
         this.page = page;
     }
 
