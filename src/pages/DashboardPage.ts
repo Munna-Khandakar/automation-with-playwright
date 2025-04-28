@@ -1,5 +1,5 @@
 import {expect, Locator, Page} from '@playwright/test';
-import {BasePage} from "./basePage";
+import {BasePage} from "./BasePage";
 
 export class DashboardPage extends BasePage {
     private readonly createDashboardButton: Locator;

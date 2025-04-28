@@ -1,5 +1,5 @@
 import {Page} from '@playwright/test';
-import {BasePage} from "./basePage";
+import {BasePage} from "./BasePage";
 import config from '../../playwright.config';
 
 export class LoginPage extends BasePage {

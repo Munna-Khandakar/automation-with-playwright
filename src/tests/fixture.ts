@@ -17,10 +17,9 @@ export const test = base.extend<TestFixtures>({
         const reportsPage = new ReportsPage(page);
         await use(reportsPage);
     },
-    publicPage: async ({browser}, use) => {
-        const context = await browser.newContext({storageState: null});
-        const page = await context.newPage();
+    publicPage: async ({page}, use) => {
+        await page.context().storageState({path: null});
         await use(page);
-        await context.close();
+        await page.close();
     },
 });

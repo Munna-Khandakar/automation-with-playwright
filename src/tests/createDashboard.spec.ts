@@ -6,7 +6,7 @@ test.describe("Reporting Dashboard", () => {
         await dashboardPage.isValidPage();
     });
 
-    test(' should successfully create a new dashboard with valid inputs', async ({dashboardPage}) => {
+    test('should successfully create a new dashboard with valid inputs', async ({dashboardPage}) => {
         const dashboardName = 'Test Dashboard';
         const dashboardDescription = 'Test Description for Dashboard';
 
@@ -18,7 +18,7 @@ test.describe("Reporting Dashboard", () => {
         await dashboardPage.addReportToDashboard()
     })
 
-    test('should display for empty input', async ({dashboardPage}) => {
+    test('should display error for empty input', async ({dashboardPage}) => {
         await dashboardPage.goto();
         await dashboardPage.clickCreateDashboardButton();
         await dashboardPage.submitCreateDashboardForm();
