@@ -15,6 +15,10 @@ export default defineConfig({
 
     use: {
         baseURL: 'https://ideas.ideascale.me',
+        httpCredentials: {
+            username: 'user',
+            password: 'pass',
+        },
         trace: 'on-first-retry',
     },
 
@@ -30,6 +34,15 @@ export default defineConfig({
             name: 'chromium',
             use: {
                 ...devices['Desktop Chrome'],
+                storageState: '.auth/user.json',
+            },
+            dependencies: ['setup'],
+        },
+        {
+            name: 'small device',
+            use: {
+                ...devices['Desktop Chrome'],
+                viewport: {width: 576, height: 720},
                 storageState: '.auth/user.json',
             },
             dependencies: ['setup'],
