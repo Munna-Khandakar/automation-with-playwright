@@ -19,8 +19,8 @@ export class DashboardPage extends BasePage {
         this.addReportsButton = this.page.getByRole('button', {name: 'Add Reports'});
     }
 
-    async goto(): Promise<void> {
-        await this.page.goto(`https://ideas.ideascale.me/reporting`);
+    async navigate(): Promise<void> {
+        await this.page.goto(`/reporting`);
     }
 
     async isValidPage(): Promise<void> {
@@ -30,7 +30,7 @@ export class DashboardPage extends BasePage {
 
     async clickCreateDashboardButton(): Promise<void> {
         await this.createDashboardButton.click();
-        
+
     }
 
     async submitCreateDashboardForm(name: string = '', description: string = ''): Promise<void> {
@@ -41,7 +41,7 @@ export class DashboardPage extends BasePage {
         await this.descriptionField.fill(description);
 
         await this.submitButton.click();
-        
+
     }
 
     async assertDashboardCreated(): Promise<void> {
@@ -51,7 +51,7 @@ export class DashboardPage extends BasePage {
 
     async clickAddReportsButton(): Promise<void> {
         await this.addReportsButton.click();
-        
+
     }
 
     async addReportToDashboard(): Promise<void> {

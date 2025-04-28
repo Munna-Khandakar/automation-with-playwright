@@ -7,7 +7,7 @@ export class ReportsPage extends BasePage {
         super(page);
     }
 
-    async goto(): Promise<void> {
+    async navigate(): Promise<void> {
         await this.page.goto(`/reporting/reports`);
     }
 

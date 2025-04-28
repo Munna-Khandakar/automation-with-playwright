@@ -2,7 +2,7 @@ import {test} from "./fixture";
 
 test.describe("Reporting Dashboard", () => {
     test('should navigate to and validate the reporting home page', async ({dashboardPage}) => {
-        await dashboardPage.goto();
+        await dashboardPage.navigate();
         await dashboardPage.isValidPage();
     });
 
@@ -10,7 +10,7 @@ test.describe("Reporting Dashboard", () => {
         const dashboardName = 'Test Dashboard';
         const dashboardDescription = 'Test Description for Dashboard';
 
-        await dashboardPage.goto();
+        await dashboardPage.navigate();
         await dashboardPage.clickCreateDashboardButton();
         await dashboardPage.submitCreateDashboardForm(dashboardName, dashboardDescription);
         await dashboardPage.assertDashboardCreated();
@@ -19,7 +19,7 @@ test.describe("Reporting Dashboard", () => {
     })
 
     test('should display error for empty input', async ({dashboardPage}) => {
-        await dashboardPage.goto();
+        await dashboardPage.navigate();
         await dashboardPage.clickCreateDashboardButton();
         await dashboardPage.submitCreateDashboardForm();
         await dashboardPage.assertDashboardNameInputError();
