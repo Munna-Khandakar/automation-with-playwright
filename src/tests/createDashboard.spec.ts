@@ -16,12 +16,12 @@ test.describe("Reporting Dashboard", () => {
         await dashboardPage.assertDashboardCreated();
         await dashboardPage.clickAddReportsButton();
         await dashboardPage.addReportToDashboard()
-    })
+    });
 
     test('should display error for empty input', async ({dashboardPage}) => {
         await dashboardPage.navigate();
         await dashboardPage.clickCreateDashboardButton();
         await dashboardPage.submitCreateDashboardForm();
         await dashboardPage.assertDashboardNameInputError();
-    })
+    });
 })
