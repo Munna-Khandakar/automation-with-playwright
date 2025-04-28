@@ -1,4 +1,4 @@
-import {Page} from '@playwright/test';
+import {expect, Page} from '@playwright/test';
 import {BasePage} from "./basePage";
 
 export class ReportsPage extends BasePage {
@@ -8,6 +8,10 @@ export class ReportsPage extends BasePage {
     }
 
     async goto(): Promise<void> {
-        await this.page.goto(`https://ideas.ideascale.me/reporting/reports`);
+        await this.page.goto(`/reporting/reports`);
+    }
+
+    async assertTitle(): Promise<void> {
+        await expect(this.page).toHaveTitle(/Reporting/);
     }
 }
