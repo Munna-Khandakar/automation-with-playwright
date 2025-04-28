@@ -1,7 +1,7 @@
 import {expect, Locator, Page} from '@playwright/test';
-import {BasePage} from "../basePage";
+import {BasePage} from "./basePage";
 
-export class ReportingHomePage extends BasePage {
+export class DashboardPage extends BasePage {
     private readonly createDashboardButton: Locator;
     private readonly addReportsButton: Locator;
     private readonly dashboardNameField: Locator;
