@@ -1,7 +1,7 @@
 import {test} from "./fixture";
 
 test.describe("Reporting Dashboard", () => {
-    test('should navigate to and validate the reporting home page', async ({dashboardPage}) => {
+    test.only('should navigate to and validate the reporting home page', async ({dashboardPage}) => {
         await dashboardPage.navigate();
         await dashboardPage.isValidPage();
     });

@@ -20,7 +20,14 @@ export class DashboardPage extends BasePage {
     }
 
     async navigate(): Promise<void> {
+        await this.page.pause();
+
+        const context = this.page.context();
+        const storageState = await context.storageState({path: '.auth/user.json'});
+        console.log(storageState);
+
         await this.page.goto(`/reporting`);
+        await this.page.pause();
     }
 
     async isValidPage(): Promise<void> {

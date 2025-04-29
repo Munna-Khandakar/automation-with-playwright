@@ -9,7 +9,7 @@ export class LoginPage extends BasePage {
     }
 
     async navigate(): Promise<void> {
-        await this.page.goto(`/a/workspace/login`);
+        await this.page.goto(`https://ideas.ideascale.me/a/workspace/login`);
     }
 
     async fillEmail(): Promise<void> {
